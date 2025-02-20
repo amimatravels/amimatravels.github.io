@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #ddd 3px solid;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .contact-form, .address-details {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+        .contact-form h2, .address-details h2 {
+            margin-top: 0;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background: #4CAF50;
+        }
+        .address-details p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form action="/submit-form" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="address-details">
+                <h2>Our Address</h2>
+                <p><strong>Amima Travels</strong></p>
+                <p>Lalbagh College Road</p>
+                <p>Lalbagh, West Bengal, 742149</p>
+                <p><strong>Phone:</strong> (91) 7384366415</p>
+                <p><strong>Email:</strong> contact@amimatravels.com</p>
+                <p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+
+ <div class="social-media">
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com/amimatravels/" target="_blank" aria-label="Facebook">
+                <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/OIP.jpg" alt="Facebook" style="width: 42px; height: 42px;">
+            </a>
+            <a href="https://x.com/AmimaTravels" target="_blank" aria-label="Twitter">
+                <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/twitter.jpg" alt="Twitter" style="width: 40px; height: 40px;">
+            </a>
+            <a href="https://www.instagram.com/amimatravels/" target="_blank" aria-label="Instagram">
+                <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/instagram.jpg" alt="Instagram" style="width: 40px;  height: 40px;">
+            </a>
+            <a href="https://www.linkedin.com/company/amima-travels/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+                <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/linkedin.png" alt="LinkedIn" style="width: 40px;  height: 40px; ">
+            </a>
+	    <a href="https://www.youtube.com/@amimatravels" target="_blank" aria-label="YouTube">
+                <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/youtube.jpg" alt="YouTube" style="width: 42px; height: 42px;">
+            </a>
+        </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

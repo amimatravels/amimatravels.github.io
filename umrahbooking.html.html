@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umrah Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Umrah Booking</h1>
+        <p>Plan your spiritual journey with ease</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Book Your Umrah Package</h2>
+            <form action="/submit-booking" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="package">Select Package:</label>
+                    <select id="package" name="package" required>
+                        <option value="basic">Basic Package</option>
+                        <option value="standard">Standard Package</option>
+                        <option value="luxury">Luxury Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dates">Preferred Dates:</label>
+                    <input type="date" id="dates" name="dates" required>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>About Us</h2>
+            <p>We offer a range of Umrah packages to cater to your needs. Our goal is to provide a seamless experience for your spiritual journey.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Umrah Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>
