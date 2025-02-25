@@ -64,6 +64,26 @@
             font-weight: bold;
         }
 
+        /* Back to Homepage Button */
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #FA742D; /* Orange */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .back-home:hover {
+            background-color: #d65c1f; /* Darker Orange */
+        }
+
     </style>
 </head>
 <body>
@@ -106,9 +126,13 @@
             <p>📞 Contact: +91 7384366415</p>
             <p>📧 Email: contact@amimatravels.com</p>
         </div>
+
+        <!-- Back to Homepage Button -->
+        <button class="back-home" onclick="goToHomepage()">Back to Homepage</button>
     </div>
 
     <script>
+        // Hero Section Image Slider
         const images = document.querySelectorAll('.hero img');
         let currentIndex = 0;
 
@@ -119,6 +143,11 @@
         }
 
         setInterval(changeImage, 4000); // Change image every 4 seconds
+
+        // Back to Homepage Function
+        function goToHomepage() {
+            window.location.href = "index.html"; // Change this if your homepage has a different filename
+        }
     </script>
 
 </body>
