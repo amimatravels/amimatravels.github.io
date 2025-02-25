@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Amima Travels</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB; /* Sky Blue */
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #00AEEF; /* Deep Sky Blue */
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Info */
+        .contact {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #005f99; /* Dark Blue */
+            font-weight: bold;
+        }
+
+        /* Dynamic Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: -1;
+            animation: changeBg 10s infinite alternate;
+        }
+
+        /* Keyframes for Background Change */
+        @keyframes changeBg {
+            0% { background-image: url('https://source.unsplash.com/1600x900/?airplane,sky'); }
+            50% { background-image: url('https://source.unsplash.com/1600x900/?airport,clouds'); }
+            100% { background-image: url('https://source.unsplash.com/1600x900/?travel,vacation'); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <header>About Amima Travels</header>
+
+    <div class="container">
+        <h2>Get Cheapest Flight Tickets! Book online flight tickets at guaranteed lowest airfare</h2>
+        <p>
+            Amima Travels is one of the best and cheapest online travel portals in India, 
+            offering travelers an extensive selection of flights and travel services at the lowest prices. 
+            Our goal is to fulfill all your travel needs. Search hundreds of flights at once and book 
+            your perfect trip at the best price.
+        </p>
+        
+        <p>
+            Our major activity is to provide affordable travel solutions and meet the needs of priority sector lending (PSL). 
+            We specialize in travel agency services, offering seamless experiences for our customers. 
+        </p>
+        
+        <p>
+            Visit us today and experience travel like never before!
+        </p>
+
+        <div class="contact">
+            <p>📞 Contact: +91 7384366415</p>
+            <p>📧 Email: contact@amimatravels.com</p>
+        </div>
+    </div>
+
+</body>
+</html>
