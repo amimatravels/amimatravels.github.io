@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Amima Travels</title>
+    <meta name="description" content="Get in touch with Amima Travels for the best travel deals. Contact us via phone, email, or follow us on social media.">
+    <meta name="keywords" content="Amima Travels, Contact Amima Travels, Travel Agency, Flight Booking, Hotel Booking">
+    <meta name="author" content="Amima Travels">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    
+    <!-- Google Tag for SEO -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_TAG_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GOOGLE_TAG_ID');
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #007bff, #00a2ff);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .hero {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        .content {
+            padding: 30px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-icons a {
+            text-decoration: none;
+            font-size: 24px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Contact Us - Amima Travels</header>
+    <div class="hero" id="hero">Let's Connect with Amima Travels</div>
+    <div class="content">
+        <h2>Get in Touch</h2>
+        <p>We are here to assist you with all your travel needs. Reach out to us via phone, email, or follow us on social media.</p>
+        <p><strong>Phone:</strong> +91 7384366415</p>
+        <p><strong>Email:</strong> contact@amimatravels.com</p>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/amimatravels/" target="_blank">📘 Facebook</a>
+            <a href="https://www.instagram.com/amimatravels/" target="_blank">📸 Instagram</a>
+            <a href="https://www.youtube.com/amimatravels/" target="_blank">▶️ YouTube</a>
+            <a href="https://www.linkedin.com/company/amima-travels/" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Amima Travels | Murshidabad, West Bengal, India</p>
+    </footer>
+    
+    <script>
+        const hero = document.getElementById("hero");
+        const images = [
+            "airbus-8607152_1280.jpg",
+            "airbus-4454338_1280.jpg",
+            "boat-7602830_1280.jpg",
+            "bora-bora-3023437_1280.jpg",
+            "couple-7612157_1280.jpg",
+            "emirates-867771_1280.jpg",
+            "glacier-7187291_1280.jpg",
+            "iceberg-6966784_1280.jpg",
+            "polynesia-3021072_1280.jpg",
+            "sea-7250881_1280.jpg"
+        ];
+        let index = 0;
+        function changeBackground() {
+            hero.style.backgroundImage = `url('${images[index]}')`;
+            index = (index + 1) % images.length;
+        }
+        setInterval(changeBackground, 5000);
+        changeBackground();
+    </script>
+</body>
+</html>
