@@ -140,7 +140,7 @@
         <a href="booking.html" class="cta-button">Start Booking</a>
     </div>
 
-    <!-- Booking Widgets -->
+     <!-- Booking Widgets -->
     <script async src="https://tp.media/content?trs=391513&shmarker=608703&locale=en&curr=INR&default_origin=Kolkata&powered_by=true&border_radius=0&plain=false&color_button=%23FA742D&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121" charset="utf-8"></script>    
 
     <script async src="https://tp.media/content?currency=usd&trs=391513&shmarker=608703&color_button=%23FF0000&target_host=www.aviasales.com%2Fsearch&locale=en&powered_by=true&origin=LON&destination=BKK&with_fallback=false&non_direct_flights=true&min_lines=5&border_radius=0&color_background=%23FFFFFF&color_text=%23000000&color_border=%23FFFFFF&promo_id=2811&campaign_id=100" charset="utf-8"></script>
@@ -152,5 +152,32 @@
     <footer>
         <p>Contact: contact@amimatravels.com | Phone: +91 7384366415 | Address: Murshidabad, West Bengal, India</p>
     </footer>
+
+    <script>
+        // JavaScript for Dynamic Background Slideshow
+        const hero = document.getElementById("hero");
+
+        const images = [
+            "airbus-8607152_1280.jpg",
+            "airbus-4454338_1280.jpg",
+            "boat-7602830_1280.jpg",
+            "bora-bora-3023437_1280.jpg",
+            "couple-7612157_1280.jpg",
+            "emirates-867771_1280.jpg",
+            "glacier-7187291_1280.jpg",
+            "iceberg-6966784_1280.jpg",
+            "polynesia-3021072_1280.jpg",
+            "sea-7250881_1280.jpg"
+        ];
+
+        let index = 0;
+        function changeBackground() {
+            hero.style.backgroundImage = `url('${images[index]}')`;
+            index = (index + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000);
+        changeBackground();
+    </script>
 </body>
 </html>
