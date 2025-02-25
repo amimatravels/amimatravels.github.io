@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Amima Travels</title>
+    
+    <!-- ✅ SEO Meta Tags ✅ -->
+    <meta name="description" content="Amima Travels offers the cheapest flight tickets, best travel deals, and seamless booking experiences. Book now for the lowest airfare!">
+    <meta name="keywords" content="cheap flights, lowest airfare, travel deals, book flights, Amima Travels, budget travel">
+    <meta name="author" content="Amima Travels">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ✅ Open Graph for Social Media ✅ -->
+    <meta property="og:title" content="Amima Travels - Cheapest Flight Tickets">
+    <meta property="og:description" content="Find the best travel deals with Amima Travels. Book cheap flights and hotels now!">
+    <meta property="og:image" content="https://www.amimatravels.com/logo.jpg">
+    <meta property="og:url" content="https://www.amimatravels.com">
+    <meta property="og:type" content="website">
+    
+    <!-- ✅ Google Analytics ✅ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-XXXXXXXXX-X'); // Replace with your Google Analytics ID
+    </script>
+
+    <!-- ✅ Google Ads (Replace 'AW-XXXXXXX' with your actual AdWords ID) ✅ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+    <script>
+        gtag('config', 'AW-XXXXXXX'); // Replace with your Google Ads ID
+    </script>
+
+    <!-- ✅ FontAwesome for Social Media Icons ✅ -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <style>
         /* General Styles */
         body {
@@ -62,6 +95,23 @@
             font-size: 18px;
             color: #005f99; /* Dark Blue */
             font-weight: bold;
+        }
+
+        /* Social Media Icons */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #FA742D; /* Orange */
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-links a:hover {
+            color: #d65c1f; /* Darker Orange */
         }
 
         /* Back to Homepage Button */
@@ -127,12 +177,18 @@
             <p>📧 Email: contact@amimatravels.com</p>
         </div>
 
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/amimatravels/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/amimatravels/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/amima-travels/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
         <!-- Back to Homepage Button -->
         <button class="back-home" onclick="goToHomepage()">Back to Homepage</button>
     </div>
 
     <script>
-        // Hero Section Image Slider
         const images = document.querySelectorAll('.hero img');
         let currentIndex = 0;
 
@@ -142,11 +198,10 @@
             images[currentIndex].classList.add('active');
         }
 
-        setInterval(changeImage, 4000); // Change image every 4 seconds
+        setInterval(changeImage, 4000); 
 
-        // Back to Homepage Function
         function goToHomepage() {
-            window.location.href = "index.html"; // Change this if your homepage has a different filename
+            window.location.href = "index.html";
         }
     </script>
 
