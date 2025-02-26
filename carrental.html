@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - Amima Travels</title>
+    <meta name="description" content="Find the best car rental deals with Amima Travels. Compare prices and book online easily.">
+    <meta name="keywords" content="car rental, hire car, Amima Travels, cheap car rental, best car deals">
+    <meta name="author" content="Amima Travels">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(135deg, #87CEEB, #ffffff);
+            color: black;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .hero {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 36px;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        .content {
+            padding: 30px;
+        }
+        .cta-button {
+            background: #FA742D;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Car Rental - Amima Travels</header>
+    <div class="hero" id="hero">Rent Your Perfect Car</div>
+    <div class="content">
+        <h2>Find the Best Car Rental Deals</h2>
+        <p>Compare car rental prices and book easily with Amima Travels.</p>
+        <a href="index.html" class="cta-button">Back to Home</a>
+    </div>
+
+    <!-- Car Rental Widget -->
+    <script async src="https://c87.travelpayouts.com/content?trs=391513&shmarker=608703&powered_by=true&country=153&lang=en&width=100&background=light&logo=true&header=true&gearbox=false&cars=false&border=true&footer=true&promo_id=4322" charset="utf-8"></script>
+    
+    <footer>
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/amimatravels/" target="_blank" aria-label="Facebook">
+            <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/OIP.jpg" alt="Facebook" style="width: 42px; height: 42px;">
+        </a>
+        <a href="https://x.com/AmimaTravels" target="_blank" aria-label="Twitter">
+            <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/twitter.jpg" alt="Twitter" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.instagram.com/amimatravels/" target="_blank" aria-label="Instagram">
+            <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/instagram.jpg" alt="Instagram" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.linkedin.com/company/amima-travels/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+            <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px;">
+        </a>
+        <a href="https://www.youtube.com/@amimatravels" target="_blank" aria-label="YouTube">
+            <img src="C:/inetpub/wwwroot/AMIMA TRAVELS/youtube.jpg" alt="YouTube" style="width: 42px; height: 42px;">
+        </a>
+    </footer>
+
+    <script>
+        // JavaScript for Dynamic Background Slideshow
+        const hero = document.getElementById("hero");
+        const images = [
+            "automobile-7600895_1280.jpg",
+            "car-5246178_1280.jpg",
+            "car-key-842107_1280.jpg",
+            "car-rental-6792111_1280.jpg"
+        ];
+
+        let index = 0;
+        function changeBackground() {
+            hero.style.backgroundImage = `url('${images[index]}')`;
+            index = (index + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000); // Change every 5 seconds
+        changeBackground(); // Initial call
+    </script>
+</body>
+</html>
 
