@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking - Amima Travels</title>
@@ -10,7 +11,6 @@
     <meta name="author" content="Amima Travels">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,14 +54,6 @@
             padding: 15px;
             margin-top: 20px;
         }
-
-        /* Fix for iframe and script elements */
-        iframe, script {
-            display: block !important;
-            width: 100% !important;
-            height: auto !important;
-            min-height: 400px;
-        }
     </style>
 </head>
 <body>
@@ -72,12 +64,11 @@
         <p>Explore amazing hotel deals worldwide with Amima Travels.</p>
     </div>
 
-    <!-- Booking Widgets (Now only using delayed script) -->
-    <div id="booking-widget"></div>
+    <!-- Booking Widgets -->
+    <script async src="https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&lang=www&layout=S10391&powered_by=true&promo_id=4038" charset="utf-8"></script>
 
-    <!-- Trip.com Widget (Made responsive) -->
-    <iframe border="0" src="https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&trip_sub1=" 
-            style="width:100%; min-height:400px;" frameborder="0" scrolling="no"></iframe>
+    <!-- Trip.com Widget -->
+    <iframe border="0" src="https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&trip_sub1=" style="width:728px;height:90px" frameborder="0" scrolling="no"></iframe>
 
     <h2>Follow Us</h2>
     <a href="https://www.facebook.com/amimatravels/" target="_blank" aria-label="Facebook">
@@ -120,14 +111,6 @@
 
         setInterval(changeBackground, 5000); // Change every 5 seconds
         changeBackground(); // Initial call
-
-        // Delayed Booking Widget Load
-        setTimeout(function() {
-            let script = document.createElement("script");
-            script.src = "https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&lang=www&layout=S10391&powered_by=true&promo_id=4038";
-            script.async = true;
-            document.getElementById("booking-widget").appendChild(script);
-        }, 2000); // Load after 2 seconds
     </script>
 </body>
 </html>
