@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hotel Booking - Amima Travels</title>
-<meta name="description" content="Find the best hotel deals with Amima Travels. Book now for the lowest rates on hotels worldwide.">
-<meta name="keywords" content="hotel booking, cheap hotels, best hotel deals, travel, Amima Travels">
-<meta name="author" content="Amima Travels">
 
 <style>
     body {
@@ -39,9 +36,7 @@
         padding: 30px;
         text-align: center;
     }
-    .content h2 {
-        color: #007bff;
-    }
+    .content h2 { color: #007bff; }
     .cta-button {
         background: #FA742D;
         color: white;
@@ -59,7 +54,8 @@
         text-align: center;
         margin-top: 30px;
     }
-    /* Responsive Widgets Container */
+
+    /* Responsive Flexbox for widgets */
     .widgets-container {
         display: flex;
         flex-wrap: wrap;
@@ -68,24 +64,22 @@
         margin: 30px 0;
     }
     .hotel-widget {
-        flex: 1 1 500px; /* min width 500px, grow to fill space */
+        flex: 1 1 500px;
         min-height: 650px;
-        background-color: #f0f0f0;
+        background-color: #e0f7fa; /* Light cyan for visibility */
+        padding: 10px;
+        border: 2px solid #007bff;
+        box-sizing: border-box;
     }
-    /* Social Icons */
+
     .social-icons img {
         margin: 0 8px;
         width: 42px;
         height: 42px;
     }
-    @media(max-width: 768px) {
-        .hero { font-size: 28px; }
-        .hotel-widget { min-height: 600px; }
-    }
-    @media(max-width: 480px) {
-        .hero { font-size: 24px; }
-        .hotel-widget { min-height: 550px; }
-    }
+
+    @media(max-width: 768px) { .hero { font-size: 28px; } }
+    @media(max-width: 480px) { .hero { font-size: 24px; } .hotel-widget { min-height: 600px; } }
 </style>
 </head>
 <body>
@@ -99,7 +93,7 @@
     <p>Explore amazing hotel deals worldwide with Amima Travels.</p>
 </div>
 
-<!-- Widgets in Flexbox Container -->
+<!-- Widgets Container -->
 <div class="widgets-container">
     <div class="hotel-widget" id="tripcom-widget-container"></div>
     <div class="hotel-widget" id="travelpayouts-widget-container"></div>
@@ -122,54 +116,39 @@
 <!-- Background Slideshow -->
 <script>
 const hero = document.getElementById("hero");
-const images = [
-    "hotel-7885138_1920.jpg",
-    "paradise-598201_1920.jpg",
-    "receptionist-5975961_1920.jpg",
-    "swimming-pool-2128578_1920.jpg",
-];
-let index = 0;
-function changeBackground() {
-    hero.style.backgroundImage = `url('${images[index]}')`;
-    index = (index + 1) % images.length;
-}
-setInterval(changeBackground, 5000);
+const images = ["hotel-7885138_1920.jpg","paradise-598201_1920.jpg","receptionist-5975961_1920.jpg","swimming-pool-2128578_1920.jpg"];
+let index=0;
+function changeBackground(){ hero.style.backgroundImage = `url('${images[index]}')`; index = (index+1)%images.length; }
+setInterval(changeBackground,5000);
 changeBackground();
 </script>
 
-<!-- Auto Currency Detection & Load Widgets -->
+<!-- Load Widgets with Auto Currency -->
 <script>
-function loadWidgets(currency) {
-    // Trip.com Widget
+function loadWidgets(currency){
     const tripContainer = document.getElementById('tripcom-widget-container');
     const tripIframe = document.createElement('iframe');
     tripIframe.src = `https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&type=hotel&curr=${currency}`;
-    tripIframe.style.width = "100%";
-    tripIframe.style.height = "650px";
-    tripIframe.frameBorder = "0";
-    tripIframe.scrolling = "no";
+    tripIframe.style.width="100%";
+    tripIframe.style.height="650px";
+    tripIframe.frameBorder="0";
+    tripIframe.scrolling="no";
+    tripIframe.allowFullscreen = true;
     tripContainer.appendChild(tripIframe);
 
-    // Travelpayouts Hotel Widget
     const tpContainer = document.getElementById('travelpayouts-widget-container');
     const tpScript = document.createElement('script');
-    tpScript.async = true;
+    tpScript.async=true;
     tpScript.src = `https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&layout=HOTEL&lang=en&curr=${currency}&powered_by=true&promo_id=YOUR_PROMO_ID`;
-    tpScript.charset = "utf-8";
+    tpScript.charset="utf-8";
     tpContainer.appendChild(tpScript);
 }
 
-// Detect currency via IP
-fetch('https://ipapi.co/json/')
-    .then(res => res.json())
-    .then(data => {
-        const currency = data.currency || 'INR';
-        loadWidgets(currency);
-    })
-    .catch(err => {
-        console.log('Currency detection failed, using INR', err);
-        loadWidgets('INR');
-    });
+// Detect currency
+fetch('https://ipapi.co/json/').then(res=>res.json()).then(data=>{
+    const currency=data.currency||'INR';
+    loadWidgets(currency);
+}).catch(err=>{ console.log('Currency detection failed, using INR',err); loadWidgets('INR'); });
 </script>
 
 </body>
