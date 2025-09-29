@@ -1,8 +1,6 @@
-<!-- Hotel Booking Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking - Amima Travels</title>
@@ -19,6 +17,12 @@
             text-align: center;
             background-color: #f4f4f4;
             color: #000;
+        }
+        header {
+            background: linear-gradient(135deg, #007bff, #00a2ff);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
         }
         .hero {
             height: 400px;
@@ -54,21 +58,26 @@
             padding: 15px;
             margin-top: 20px;
         }
+        .hotel-widget {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
     </style>
 </head>
 <body>
     <header>Amima Travels - Hotel Booking</header>
+
     <div class="hero" id="hero">Find Your Perfect Hotel</div>
+
     <div class="content">
         <h2>Book Hotels at the Best Price</h2>
         <p>Explore amazing hotel deals worldwide with Amima Travels.</p>
     </div>
 
-    <!-- Booking Widgets -->
-    <script async src="https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&lang=www&layout=S10391&powered_by=true&promo_id=4038" charset="utf-8"></script>
-
-    <!-- Trip.com Widget -->
-    <iframe border="0" src="https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&trip_sub1=" style="width:728px;height:90px" frameborder="0" scrolling="no"></iframe>
+    <!-- Hotel Widgets -->
+    <div class="hotel-widget" id="tripcom-widget-container"></div>
+    <div class="hotel-widget" id="travelpayouts-widget-container"></div>
 
     <h2>Follow Us</h2>
     <a href="https://www.facebook.com/amimatravels/" target="_blank" aria-label="Facebook">
@@ -86,31 +95,64 @@
     <a href="https://www.youtube.com/@amimatravels" target="_blank" aria-label="YouTube">
         <img src="icons8-youtube-48.png" alt="YouTube" style="width: 42px; height: 42px;">
     </a>
-    
+
     <footer>
         <p>Contact: contact@amimatravels.com | Phone: +91 7384366415 | Address: Murshidabad, West Bengal, India</p>
         <a href="index.html" class="cta-button">Back to Home</a>
     </footer>
 
+    <!-- Background Slideshow Script -->
     <script>
-        // JavaScript for Dynamic Background Slideshow
         const hero = document.getElementById("hero");
-
         const images = [
             "hotel-7885138_1920.jpg",
             "paradise-598201_1920.jpg",
             "receptionist-5975961_1920.jpg",
             "swimming-pool-2128578_1920.jpg",
         ];
-
         let index = 0;
         function changeBackground() {
             hero.style.backgroundImage = `url('${images[index]}')`;
             index = (index + 1) % images.length;
         }
+        setInterval(changeBackground, 5000);
+        changeBackground();
+    </script>
 
-        setInterval(changeBackground, 5000); // Change every 5 seconds
-        changeBackground(); // Initial call
+    <!-- Auto Currency Detection & Load Both Hotel Widgets -->
+    <script>
+    function loadWidgets(currency) {
+        // --- Trip.com Widget ---
+        const tripContainer = document.getElementById('tripcom-widget-container');
+        const tripIframe = document.createElement('iframe');
+        tripIframe.src = `https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&type=hotel&curr=${currency}`;
+        tripIframe.style.width = "100%";
+        tripIframe.style.maxWidth = "1200px";
+        tripIframe.style.height = "600px";
+        tripIframe.frameBorder = "0";
+        tripIframe.scrolling = "no";
+        tripContainer.appendChild(tripIframe);
+
+        // --- Travelpayouts Hotel Widget ---
+        const tpContainer = document.getElementById('travelpayouts-widget-container');
+        const tpScript = document.createElement('script');
+        tpScript.async = true;
+        tpScript.src = `https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&layout=HOTEL&lang=en&curr=${currency}&powered_by=true&promo_id=YOUR_PROMO_ID`;
+        tpScript.charset = "utf-8";
+        tpContainer.appendChild(tpScript);
+    }
+
+    // Detect user currency via IP
+    fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+            const currency = data.currency || 'INR'; // fallback
+            loadWidgets(currency);
+        })
+        .catch(err => {
+            console.log('Currency detection failed, using INR', err);
+            loadWidgets('INR');
+        });
     </script>
 </body>
 </html>
