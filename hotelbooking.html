@@ -1,202 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Booking - Amima Travels</title>
-    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
-      document.head.appendChild(script);
-  })();
-</script>
-<meta name="description" content="Find the best hotel deals with Amima Travels. Book now for the lowest rates on hotels worldwide.">
-<meta name="keywords" content="hotel booking, cheap hotels, best hotel deals, travel, Amima Travels">
-<meta name="author" content="Amima Travels">
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #000;
-}
-header {
-    background: linear-gradient(135deg, #007bff, #00a2ff);
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-.hero {
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
-}
-.content {
-    padding: 30px;
-    text-align: center;
-}
-.content h2 { color: #007bff; }
-.cta-button {
-    background: #FA742D;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    display: inline-block;
-    margin-top: 20px;
-}
-footer {
-    background: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Responsive Flexbox for widgets */
-.widgets-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
-    padding: 0 15px;
-}
-.hotel-widget {
-    flex: 1 1 500px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.widget-header {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 8px 8px 0 0;
-    text-align: center;
-}
-.widget-body {
-    background: #f5f5f5;
-    flex: 1;
-    min-height: 500px;
-}
-
-/* Social Icons */
-.social-icons img {
-    margin: 0 8px;
-    width: 42px;
-    height: 42px;
-}
-
-@media(max-width: 768px) { .hero { font-size: 28px; } }
-@media(max-width: 480px) { .hero { font-size: 24px; } }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amima Travels - Hotel Deals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .content {
+      padding: 20px;
+    }
+    .cta-button {
+      display: inline-block;
+      margin: 20px auto;
+      background: #2563eb;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background: #1e40af;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f3f4f6;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    🌍 Amima Travels - Everyday Escape Deals
+  </header>
 
-<header>Amima Travels - Hotel Booking</header>
+  <div class="content">
+    <h2>Find the Best Hotel & Travel Deals</h2>
+    <p>Click below to explore amazing offers on Trip.com with our exclusive affiliate link.</p>
 
-<div class="hero" id="hero">Find Your Perfect Hotel</div>
+    <a class="cta-button" href="https://sg.trip.com/sale/w/28065/everydayescape.html?locale=en-SG&promo_referer=3371_28065_1&Allianceid=6028632&SID=170314460&trip_sub1=&trip_sub3=P5660496" target="_blank">
+      ✈️ View Everyday Escape Deals
+    </a>
 
-<div class="content">
-    <h2>Book Hotels at the Best Price</h2>
-    <p>Explore amazing hotel deals worldwide with Amima Travels.</p>
-</div>
+    <iframe src="https://sg.trip.com/sale/w/28065/everydayescape.html?locale=en-SG&promo_referer=3371_28065_1&Allianceid=6028632&SID=170314460&trip_sub1=&trip_sub3=P5660496" loading="lazy"></iframe>
+  </div>
 
-<!-- Widgets -->
-<div class="widgets-container">
-    <!-- Trip.com Widget -->
-    <div class="hotel-widget">
-        <div class="widget-header" style="background:#007bff;">Trip.com Hotels</div>
-        <div class="widget-body" id="tripcom-widget-container"></div>
-    </div>
-
-    <!-- Travelpayouts Widget -->
-    <div class="hotel-widget">
-        <div class="widget-header" style="background:#ff5722;">Travelpayouts Hotels</div>
-        <div class="widget-body" id="travelpayouts-widget-container"></div>
-    </div>
-</div>
-
-<h2>Follow Us</h2>
-<div class="social-icons" style="margin-bottom:20px;">
-    <a href="https://www.facebook.com/amimatravels/" target="_blank"><img src="icons8-facebook-48.png" alt="Facebook"></a>
-    <a href="https://x.com/AmimaTravels" target="_blank"><img src="icons8-x-48.png" alt="Twitter"></a>
-    <a href="https://www.instagram.com/amimatravels/" target="_blank"><img src="icons8-instagram-48.png" alt="Instagram"></a>
-    <a href="https://www.linkedin.com/company/amima-travels/?viewAsMember=true" target="_blank"><img src="icons8-linkedin-48.png" alt="LinkedIn"></a>
-    <a href="https://www.youtube.com/@amimatravels" target="_blank"><img src="icons8-youtube-48.png" alt="YouTube"></a>
-</div>
-
-<footer>
-    <p>Contact: contact@amimatravels.com | Phone: +91 7384366415 | Address: Murshidabad, West Bengal, India</p>
-    <a href="index.html" class="cta-button">Back to Home</a>
-</footer>
-
-<!-- Background Slideshow -->
-<script>
-const hero = document.getElementById("hero");
-const images = ["hotel-7885138_1920.jpg","paradise-598201_1920.jpg","receptionist-5975961_1920.jpg","swimming-pool-2128578_1920.jpg"];
-let index=0;
-function changeBackground(){ hero.style.backgroundImage=`url('${images[index]}')`; index=(index+1)%images.length; }
-setInterval(changeBackground,5000);
-changeBackground();
-</script>
-
-<!-- Load Widgets with Auto Currency & Dynamic Height -->
-<script>
-function loadWidgets(currency){
-    // Trip.com Widget
-    const tripContainer=document.getElementById('tripcom-widget-container');
-    const tripIframe=document.createElement('iframe');
-    tripIframe.src=`https://www.trip.com/partners/ad/DB1736646?Allianceid=6028632&SID=170314460&type=hotel&curr=${currency}`;
-    tripIframe.style.width="100%";
-    tripIframe.style.height="100%"; // dynamic height
-    tripIframe.style.border="0";
-    tripIframe.style.overflow="hidden";
-    tripIframe.allowFullscreen=true;
-    tripContainer.appendChild(tripIframe);
-
-    // Travelpayouts Widget
-    const tpContainer=document.getElementById('travelpayouts-widget-container');
-    const tpScript=document.createElement('script');
-    tpScript.async=true;
-    tpScript.src=`https://c121.travelpayouts.com/content?trs=391513&shmarker=608703&layout=HOTEL&lang=en&curr=${currency}&powered_by=true&promo_id=YOUR_PROMO_ID`;
-    tpScript.charset="utf-8";
-    tpContainer.appendChild(tpScript);
-}
-
-// Detect currency via IP
-fetch('https://ipapi.co/json/')
-.then(res=>res.json())
-.then(data=>{ const currency=data.currency||'INR'; loadWidgets(currency); })
-.catch(err=>{ console.log('Currency detection failed, using INR',err); loadWidgets('INR'); });
-
-// Adjust iframe height dynamically on window resize
-function adjustIframeHeight(){
-    const widgets=document.querySelectorAll('.widget-body iframe');
-    widgets.forEach(frame=>{
-        if(frame) frame.style.height = frame.parentElement.offsetHeight + "px";
-    });
-}
-window.addEventListener('resize', adjustIframeHeight);
-setTimeout(adjustIframeHeight, 1000); // initial adjustment
-</script>
-
+  <footer>
+    © 2025 Amima Travels. Powered by Trip.com Affiliate Program.
+  </footer>
 </body>
 </html>
+
