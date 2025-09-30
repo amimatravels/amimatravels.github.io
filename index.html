@@ -6,13 +6,13 @@
     <title>Amima Travels - Enjoy Stress Free Holidays</title>
 
     <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
-      document.head.appendChild(script);
-  })();
-</script>
+      (function () {
+          var script = document.createElement("script");
+          script.async = 1;
+          script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
+          document.head.appendChild(script);
+      })();
+    </script>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Book your flight and hotel at the lowest price with Amima Travels. Find the best travel deals, compare fares, and explore destinations hassle-free.">
@@ -206,39 +206,59 @@
         changeBackground();
     </script>
 
-    <!-- Auto Currency Detection & Dynamic Booking Widgets -->
+    <!-- Geo + Currency Detection & Dynamic Booking Widgets -->
     <script>
-    // Function to dynamically add Trip.com / Aviasales widget scripts with correct currency
-    function loadBookingWidgets(currency) {
-        const widgetUrls = [
-            "https://tp.media/content?trs=391513&shmarker=608703&locale=en&curr=CURRENCY&default_origin=Kolkata&powered_by=true&border_radius=0&plain=false&color_button=%23FA742D&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121",
-            "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&color_button=%23FF0000&target_host=www.aviasales.com%2Fsearch&locale=en&powered_by=true&origin=LON&destination=BKK&with_fallback=false&non_direct_flights=true&min_lines=5&border_radius=0&color_background=%23FFFFFF&color_text=%23000000&color_border=%23FFFFFF&promo_id=2811&campaign_id=100",
-            "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&searchUrl=www.aviasales.com%2Fsearch&locale=en&powered_by=true&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%230C73FE&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%2345AD35&promo_id=4041&campaign_id=100",
-            "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&lat=51.51&lng=0.06&powered_by=true&search_host=www.aviasales.com%2Fsearch&locale=en&origin=LON&value_min=0&value_max=1000000&round_trip=true&only_direct=false&radius=1&draggable=true&disable_zoom=false&show_logo=false&primary=%230C73FE&secondary=%233FABDB&light=%23FFFFFF&width=1600&height=500&zoom=2&promo_id=4054&campaign_id=100"
-        ];
+    (function() {
+        // Default values
+        let userCountry = 'IN'; // default country
+        const currencyMap = { IN: 'INR', SA: 'SAR', US: 'USD', AE: 'AED', GB: 'GBP' };
 
-        widgetUrls.forEach(url => {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = url.replace(/CURRENCY/g, currency);
-            script.charset = "utf-8";
-            document.body.appendChild(script);
-        });
-    }
+        function updateWidgetsAndLinks(country) {
+            const currency = currencyMap[country] || 'INR';
 
-    // Detect user currency via IP
-    fetch('https://ipapi.co/json/')
-        .then(res => res.json())
-        .then(data => {
-            const userCurrency = data.currency || 'INR'; // fallback to INR
-            loadBookingWidgets(userCurrency);
-        })
-        .catch(err => {
-            console.log('Currency detection failed, using INR', err);
-            loadBookingWidgets('INR');
-        });
+            // Update Trip.com / Aviasales widget scripts
+            const widgetUrls = [
+                "https://tp.media/content?trs=391513&shmarker=608703&locale=en&curr=CURRENCY&default_origin=Kolkata&powered_by=true&border_radius=0&plain=false&color_button=%23FA742D&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121",
+                "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&color_button=%23FF0000&target_host=www.aviasales.com%2Fsearch&locale=en&powered_by=true&origin=LON&destination=BKK&with_fallback=false&non_direct_flights=true&min_lines=5&border_radius=0&color_background=%23FFFFFF&color_text=%23000000&color_border=%23FFFFFF&promo_id=2811&campaign_id=100",
+                "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&searchUrl=www.aviasales.com%2Fsearch&locale=en&powered_by=true&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%230C73FE&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%2345AD35&promo_id=4041&campaign_id=100",
+                "https://tp.media/content?currency=CURRENCY&trs=391513&shmarker=608703&lat=51.51&lng=0.06&powered_by=true&search_host=www.aviasales.com%2Fsearch&locale=en&origin=LON&value_min=0&value_max=1000000&round_trip=true&only_direct=false&radius=1&draggable=true&disable_zoom=false&show_logo=false&primary=%230C73FE&secondary=%233FABDB&light=%23FFFFFF&width=1600&height=500&zoom=2&promo_id=4054&campaign_id=100"
+            ];
+
+            widgetUrls.forEach(url => {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = url.replace(/CURRENCY/g, currency);
+                script.charset = "utf-8";
+                document.body.appendChild(script);
+            });
+
+            // Optional: Update navigation links for specific countries
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (country === 'SA') {
+                    if (link.href.includes('hotelbooking.html')) {
+                        link.href = 'hotelbooking-sa.html'; // change to your SA-specific page
+                    }
+                }
+            });
+        }
+
+        // First, check if Cloudflare Worker header is available
+        if (typeof CF_IPCOUNTRY !== 'undefined') {
+            userCountry = CF_IPCOUNTRY;
+            updateWidgetsAndLinks(userCountry);
+        } else {
+            // fallback using IP API
+            fetch('https://ipapi.co/json/')
+                .then(res => res.json())
+                .then(data => {
+                    userCountry = data.country || 'IN';
+                    updateWidgetsAndLinks(userCountry);
+                })
+                .catch(() => updateWidgetsAndLinks(userCountry));
+        }
+    })();
     </script>
 
 </body>
 </html>
-
