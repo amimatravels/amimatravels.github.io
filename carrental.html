@@ -62,7 +62,17 @@
             margin-top: 20px;
         }
     </style>
-<link href="https://www.amimatravels.com/carrental.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Carrental" property="og:title"/><meta content="Rent cars at affordable prices with Amima Travels. Find the best car rental deals for your trip." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/></head>
+<link href="https://www.amimatravels.com/carrental.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Carrental" property="og:title"/><meta content="Rent cars at affordable prices with Amima Travels. Find the best car rental deals for your trip." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZBMCH41V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZBMCH41V3');
+</script>
+
+</head>
 <body><h1>Amima Travels - Carrental</h1>
 <header>Car Rental - Amima Travels</header>
 <div class="hero" id="hero">Rent Your Perfect Car</div>
@@ -110,5 +120,59 @@
         setInterval(changeBackground, 5000); // Change every 5 seconds
         changeBackground(); // Initial call
     </script>
+
+<!-- Currency Conversion Script with Dropdown -->
+<script>
+async function getCurrencyRate(base, target) {
+    try {
+        let res = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+        let data = await res.json();
+        return data.rates[target];
+    } catch (e) {
+        console.error("Currency API error", e);
+        return null;
+    }
+}
+
+async function convertPrices(targetCurrency) {
+    let priceElements = document.querySelectorAll("[data-price]");
+    for (let el of priceElements) {
+        let baseValue = parseFloat(el.getAttribute("data-price"));
+        let rate = await getCurrencyRate("USD", targetCurrency);
+        if (rate) {
+            el.innerText = (baseValue * rate).toFixed(2) + " " + targetCurrency;
+        }
+    }
+}
+
+function detectCurrency() {
+    let userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("en-IN")) return "INR";
+    if (userLang.includes("ar-SA")) return "SAR";
+    return "USD";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let userCurrency = detectCurrency();
+    document.getElementById("currencySelect").value = userCurrency;
+    convertPrices(userCurrency);
+
+    document.getElementById("currencySelect").addEventListener("change", function() {
+        convertPrices(this.value);
+    });
+});
+</script>
+
+<!-- Dropdown UI -->
+<div style="position:fixed;top:10px;right:10px;z-index:999;background:#fff;padding:5px;border-radius:5px;box-shadow:0 0 5px #ccc;">
+    <label for="currencySelect">Currency: </label>
+    <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="SAR">SAR</option>
+        <option value="EUR">EUR</option>
+    </select>
+</div>
+
 </body>
 </html>

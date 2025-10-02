@@ -61,7 +61,17 @@
             margin-top: 20px;
         }
     </style>
-<meta content="Easily book cheap flights with Amima Travels. Compare airfares and find the best deals on flight bookings." name="description"/><link href="https://www.amimatravels.com/booking.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Booking" property="og:title"/><meta content="Easily book cheap flights with Amima Travels. Compare airfares and find the best deals on flight bookings." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/></head>
+<meta content="Easily book cheap flights with Amima Travels. Compare airfares and find the best deals on flight bookings." name="description"/><link href="https://www.amimatravels.com/booking.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Booking" property="og:title"/><meta content="Easily book cheap flights with Amima Travels. Compare airfares and find the best deals on flight bookings." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZBMCH41V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZBMCH41V3');
+</script>
+
+</head>
 <body><h1>Amima Travels - Booking</h1>
 <header>
         Amima Travels - Book Your Flight
@@ -106,5 +116,59 @@
 </a>
 <p>Contact: contact@amimatravels.com | Phone: +91 7384366415 | Address: Murshidabad, West Bengal, India</p>
 </footer>
+
+<!-- Currency Conversion Script with Dropdown -->
+<script>
+async function getCurrencyRate(base, target) {
+    try {
+        let res = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+        let data = await res.json();
+        return data.rates[target];
+    } catch (e) {
+        console.error("Currency API error", e);
+        return null;
+    }
+}
+
+async function convertPrices(targetCurrency) {
+    let priceElements = document.querySelectorAll("[data-price]");
+    for (let el of priceElements) {
+        let baseValue = parseFloat(el.getAttribute("data-price"));
+        let rate = await getCurrencyRate("USD", targetCurrency);
+        if (rate) {
+            el.innerText = (baseValue * rate).toFixed(2) + " " + targetCurrency;
+        }
+    }
+}
+
+function detectCurrency() {
+    let userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("en-IN")) return "INR";
+    if (userLang.includes("ar-SA")) return "SAR";
+    return "USD";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let userCurrency = detectCurrency();
+    document.getElementById("currencySelect").value = userCurrency;
+    convertPrices(userCurrency);
+
+    document.getElementById("currencySelect").addEventListener("change", function() {
+        convertPrices(this.value);
+    });
+});
+</script>
+
+<!-- Dropdown UI -->
+<div style="position:fixed;top:10px;right:10px;z-index:999;background:#fff;padding:5px;border-radius:5px;box-shadow:0 0 5px #ccc;">
+    <label for="currencySelect">Currency: </label>
+    <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="SAR">SAR</option>
+        <option value="EUR">EUR</option>
+    </select>
+</div>
+
 </body>
 </html>
